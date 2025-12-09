@@ -21,9 +21,9 @@ Project Type: Mini Project (Terminal-Based System)
 
 Group Members
 
-Saif Sarowar Atul   - 2024-3-60-203  
-Istiak Ahmed Siam  - 2024-3-60-409  
-Umme Kulsum        - 2024-3-60-424  
+Saif Sarowar Atul    
+Istiak Ahmed Siam  
+Umme Kulsum        
 
 ------------------------------------------------------------
 
