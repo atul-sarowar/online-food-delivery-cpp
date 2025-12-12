@@ -63,6 +63,7 @@ sudo apt install g++
 Mac:
 Run the following command:
 brew install gcc
+
 Note: If your system already has Code::Blocks with MinGW, you do not need to install g++ separately. Simply open the project and build it normally.
 
 ------------------------------------------------------------
