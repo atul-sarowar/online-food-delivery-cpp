@@ -35,8 +35,18 @@ void FoodDeliverySystem::seedDrivers() {
         std::cout << "Enter name for driver " << i << ": ";
         std::cin >> name;  
         Driver *d = new Driver(i, name, 0);
+        allDrivers.push_back(d);
         // At the beginning, all drivers are available at time 0
         drivers.insert(d);
+    }
+}
+
+FoodDeliverySystem::~FoodDeliverySystem() {
+    for (Driver* driver : allDrivers) {
+        delete driver;
+    }
+    for (Order* order : allOrders) {
+        delete order;
     }
 }
 
@@ -56,6 +66,7 @@ void FoodDeliverySystem::placeOrder() {
     std::getline(std::cin, items);
 
     Order *order = new Order(nextOrderId, name, address, items);
+    allOrders.push_back(order);
 
     // Hash Map: Store order details (Track Active Orders)
     orderTable.put(order->id, order);

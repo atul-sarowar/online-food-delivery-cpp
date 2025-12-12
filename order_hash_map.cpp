@@ -67,6 +67,9 @@ void OrderHashMap::remove(int key) {
         if (cur->key == key) {
             if (prev) prev->next = cur->next;
             else      table[idx] = cur->next;
+            // The Order object itself is not deleted,
+            // because FoodDeliverySystem owns it.
+            // The hash map only owns the Node.
             delete cur;
             --numElements;
             return;

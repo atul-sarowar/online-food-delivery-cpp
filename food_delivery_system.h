@@ -4,12 +4,15 @@
 #include "order_queue.h"
 #include "driver_min_heap.h"
 #include "order_hash_map.h"
+#include <vector>
 
 class FoodDeliverySystem {
 private:
     OrderQueue      pendingOrders; // Queue of incoming orders
     DriverMinHeap   drivers;       // Min-heap of AVAILABLE drivers
     OrderHashMap    orderTable;    // Hash map: orderId -> Order*
+    std::vector<Driver*> allDrivers;
+    std::vector<Order*> allOrders;
 
     int nextOrderId;
     int currentTime;               // simulated time units
@@ -18,6 +21,7 @@ private:
 
 public:
     FoodDeliverySystem();
+    ~FoodDeliverySystem();
 
     void placeOrder();             // Module 1
     void assignNextOrder();        // Module 2
